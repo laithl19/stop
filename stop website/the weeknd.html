@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Weeknd T-Shirt</title>
+    <style>
+        /* Reset some default styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('weee.jpg'); /* Specify the correct path to your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Keeps the background fixed while scrolling */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Styling for the product page */
+        .product-container {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Styling for the product images */
+        .product-images {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .product-images img {
+            width: 350px; /* Set the width to 350px */
+            height: 350px; /* Set the height to 350px */
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+            display: inline-block; /* Display images next to each other */
+            margin-right: 10px; /* Add spacing between images */
+        }
+         /* Styling for the product page */
+         .product-container {
+            display: flex;
+            align-items: center;
+        }
+/* Apply the hover effect */
+.product-images img:hover {
+    transform: scale(1.1); /* Scale the image to 110% of its original size on hover */
+}
+        /* Styling for the product details */
+        .product-details {
+            text-align: left;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #333;
+            font-size: 20px;
+        }
+
+        .description {
+            color: #666;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        /* Style the "Add to Cart" button */
+        button.add-to-cart {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button.add-to-cart:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <!-- ... (your HTML code) ... -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Weeknd T-Shirt</title>
+        <style>
+            /* Reset some default styles */
+            body {
+                font-family: Arial, sans-serif;
+                background-image: url('weee.jpg'); /* Specify the correct path to your background image */
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed; /* Keeps the background fixed while scrolling */
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+            }
+    
+            /* Styling for the product images */
+            .product-images {
+                text-align: center;
+                padding: 20px;
+            }
+    
+            .product-images img {
+                width: 350px; /* Set the width to 350px */
+                height: 350px; /* Set the height to 350px */
+                border-radius: 5px;
+                transition: transform 0.3s ease;
+                display: inline-block; /* Display images next to each other */
+                margin-right: 10px; /* Add spacing between images */
+            }
+    
+            /* Apply the hover effect */
+            .product-images img:hover {
+                transform: scale(1.1); /* Scale the image to 110% of its original size on hover */
+            }
+    
+            /* Styling for the size options container */
+            .size-options {
+                text-align: center;
+                color: #fff;
+                margin-top: 20px; /* Add spacing between images and size options */
+            }
+    
+            /* Style each individual size option */
+            .size-option {
+                display: inline-block;
+                margin: 5px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+    
+            /* Style the selected size option */
+            .size-option.selected {
+                background-color: whitesmoke;
+                color: #fff;
+            }
+    
+            /* Style the "Add to Cart" button */
+            button.add-to-cart {
+                background-color: #333;
+                color: #fff;
+                border: none;
+                padding: 12px 24px;
+                cursor: pointer;
+                font-size: 18px;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+            }
+    
+            button.add-to-cart:hover {
+                background-color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="product-images">
+            <img src="./photo_2023-09-22_22-27-38.jpg" alt="The Weeknd T-Shirt" class="main-image">
+            <img src="./photo_2023-09-22_22-27-42.jpg" alt="The Weeknd T-Shirt" class="extra-image">
+        </div>
+    
+        <div class="size-options">
+            <div class="size-option" data-size="small">Small</div>
+            <div class="size-option" data-size="medium">Medium</div>
+            <div class="size-option" data-size="large">Large</div>
+            <div class="size-option" data-size="xl">X-Large</div>
+            <div class="size-option" data-size="xxl">XX-Large</div>
+            <div class="size-option" data-size="xxxl">XXX-Large</div>
+        </div>
+    
+        <!-- Modify the "Add to Cart" button to include an ID for easy selection -->
+        <button class="add-to-cart" id="addToCart" data-name="The Weeknd T-Shirt" data-price="10.00" disabled>Add to Cart</button>
+    </body>
+    </html>
+<script>
+    // JavaScript for image navigation (your existing code)
+    // ...
+
+    // Initialize the cart and update its display when the page loads (your existing code)
+    // ...
+
+    // Function to add items to the cart with size selection
+    function addToCartWithSize(name, price, size) {
+        console.log(Adding ${size} ${name} to the cart for $${price});
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push({ name, price, size });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartDisplay();
+        alert(Added ${size} ${name} to the cart for $${price});
+    }
+
+    // Add event listeners to the "Add to Cart" buttons with size selection
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const productName = button.getAttribute('data-name');
+            const productPrice = parseFloat(button.getAttribute('data-price'));
+            const productSize = prompt('Enter the size (small, medium, large, x-large, xx-large, xxx-large):');
+            if (productSize) {
+                addToCartWithSize(productName, productPrice, productSize);
+            }
+        });
+    });
+
+    // Add event listener to the size dropdown
+    const sizeDropdown = document.getElementById('size');
+    sizeDropdown.addEventListener('change', () => {
+        const addToCartButton = document.getElementById('addToCart');
+        addToCartButton.removeAttribute('disabled');
+    });
+
+    // Add event listener to the "Add to Cart" button
+    const addToCartButton = document.getElementById('addToCart');
+    addToCartButton.addEventListener('click', () => {
+        const productName = addToCartButton.getAttribute('data-name');
+        const productPrice = parseFloat(addToCartButton.getAttribute('data-price'));
+        const productSize = sizeDropdown.value;
+        if (productSize) {
+            addToCartWithSize(productName, productPrice, productSize);
+            // Disable the button again after adding to the cart
+            addToCartButton.setAttribute('disabled', 'disabled');
+        }
+    });
+</script>
+
+
+
+</body>
+</html>
