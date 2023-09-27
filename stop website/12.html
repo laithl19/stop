@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black and White T-Shirt Shop</title>
+    <style>
+        /* Your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap; /* Enable wrapping for smaller screens */
+            justify-content: space-between; /* Distribute products evenly */
+        }
+        .product {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            flex: calc(33.33% - 20px); /* 3 products per row with spacing */
+            box-sizing: border-box;
+        }
+        .product-images {
+            position: relative;
+        }
+        .product-image {
+            display: none;
+        }
+        .product-image.active {
+            display: block;
+        }
+        .nav-button {
+            position: ;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Black and White T-Shirt Shop</h1>
+    </header>
+    <div class="container">
+        <!-- T-Shirt 1 -->
+        <div class="product">
+            <h2>T-Shirt 1</h2>
+            <p>Price: $20.00</p>
+            <p>Description: This is a black and white t-shirt.</p>
+            <div class="product-images">
+                <img src="./photo_2023-09-22_22-27-38.jpg" alt="T-Shirt 1 - Image 1" style="width: 200px; height: 200px;" class="product-image active">
+                <img src="./photo_2023-09-22_22-27-42.jpg" alt="T-Shirt 1 - Image 2" style="width: 200px; height: 200px;" class="product-image">
+                <img src="tshirt1_3.jpg" alt="T-Shirt 1 - Image 3" class="product-image">
+                <span class="nav-button prev" onclick="changeImage(-1, 'this')">←</span>
+                <span class="nav-button next" onclick="changeImage(1, 'this')">→</span>
+            </div>
+        </div>
+
+        <!-- T-Shirt 2 -->
+        <div class="product">
+            <h2>T-Shirt 2</h2>
+            <p>Price: $25.00</p>
+            <p>Description: Another black and white t-shirt.</p>
+            <div class="product-images">
+                <img src="tshirt2_1.jpg" alt="T-Shirt 2 - Image 1" class="product-image active">
+                <img src="tshirt2_2.jpg" alt="T-Shirt 2 - Image 2" class="product-image">
+                <img src="tshirt2_3.jpg" alt="T-Shirt 2 - Image 3" class="product-image">
+                <span class="nav-button prev" onclick="changeImage(-1, 'product2')">←</span>
+                <span class="nav-button next" onclick="changeImage(1, 'product2')">→</span>
+            </div>
+        </div>
+
+        <!-- Repeat the structure for other t-shirts -->
+
+    </div>
+
+    <script>
+        // JavaScript for image navigation (Product 1)
+        
+        // JavaScript for image navigation
+        function changeImage(step, productId) {
+            const images = document.querySelectorAll(`#${productId} .product-image`);
+            let currentImageIndex = Array.from(images).findIndex(image => image.classList.contains('active'));
+            images[currentImageIndex].classList.remove('active');
+            currentImageIndex = (currentImageIndex + step + images.length) % images.length;
+            images[currentImageIndex].classList.add('active');
+        }
+    
+    </script>
+</body>
+</html>

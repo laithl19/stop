@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        /* Your CSS styles for the product page here */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("./fairooz_back.jpg"); /* Specify the correct path to your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Keeps the background fixed while scrolling */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .product {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex; /* Display product image and info side by side */
+        }
+
+        .product-image-container {
+            flex: 1; /* Take up half of the available width */
+            text-align: center;
+            color: #333;
+        }
+
+        .product-info {
+            flex: 1; /* Take up half of the available width */
+            padding-left: 20px; /* Add spacing between image and info */
+            color: #333;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .product-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-images img {
+            width: 250px;
+            height: 250px;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+            margin-right: 10px;
+            display: none; /* Initially hide all images */
+        }
+
+        .product-images img.active {
+            display: inline-block; /* Display the active color images */
+        }
+
+        .product-images img:hover {
+            transform: scale(1.1);
+        }
+
+        .color-switcher {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .color-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .color-circle.white {
+            background-color: #fff;
+        }
+
+        .color-circle.black {
+            background-color: #333;
+        }
+
+        .color-circle.active {
+            border: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Product 1</h1>
+    <div class="product">
+        <div class="product-image-container">
+            <div class="product-images" id="product1-images">
+                <!-- Black T-shirt images -->
+                <img src="./photo_2023-09-22_22-27-42.jpg" alt="Black T-Shirt 1" class="product-image black active">
+                <img src="./photo_2023-09-22_22-27-38.jpg" alt="Black T-Shirt 2" class="product-image black">
+            </div>
+        </div>
+        <div class="product-info">
+            <h2>The Weeknd T-Shirt</h2>
+            <p>Price: $10</p>
+            <label for="size">Size:</label>
+            <select id="size">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+            <label for="color">Color:</label>
+            <input type="radio" name="color" id="blackColor" value="black" onclick="changeColor('black')">
+            <label for="blackColor">Black</label>
+            <input type="radio" name="color" id="whiteColor" value="white" onclick="changeColor('white')">
+            <label for="whiteColor">White</label>
+            <button onclick="addToCart('The Weeknd T-Shirt')">Add to Cart</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code for product.html
+        document.addEventListener("DOMContentLoaded", function () {
+            // Function to change the product color
+            function changeColor(color) {
+                const productImages = document.querySelectorAll('.product-image');
+
+                // Hide all images
+                productImages.forEach(image => {
+                    image.classList.remove('active');
+                });
+
+                // Show images of the selected color
+                productImages.forEach(image => {
+                    if (image.classList.contains(color)) {
+                        image.classList.add('active');
+                    }
+                });
+            }
+        });
+
+        // JavaScript for add to cart functionality
+        function addToCart(productName) {
+            const size = document.getElementById("size").value;
+            const color = document.querySelector("input[name='color']:checked").value;
+            const price = 10; // Price for Product 1
+            const item = {
+                name: productName,
+                size: size,
+                color: color,
+                price: price,
+            };
+
+            // Retrieve existing cart items from localStorage
+            const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Add the new item to the cart
+            cartItems.push(item);
+
+            // Store the updated cart items back in localStorage
+            localStorage.setItem("cart", JSON.stringify(cartItems));
+
+            // Redirect to the cart page
+            window.location.href = "cart.html";
+        }
+    </script>
+</body>
+</html>
