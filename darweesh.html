@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mahmoud darweesh T-shirt</title> T-Shirt</title>
+    <style>
+        /* Reset some default styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("./darweesh\ back.jpg"); /* Specify the correct path to your background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Keeps the background fixed while scrolling */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #000000;
+        }
+
+        /* Styling for the product images */
+        .product-images {
+            text-align: center;
+            padding: 20px;
+            color: #000000;
+        }
+
+        .product-images img {
+            width: 350px; /* Set the width to 350px */
+            height: 350px; /* Set the height to 350px */
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+            display: inline-block; /* Display images next to each other */
+            margin-right: 10px; /* Add spacing between images */
+        
+        }
+
+        /* Apply the hover effect */
+        .product-images img:hover {
+            transform: scale(1.1); /* Scale the image to 110% of its original size on hover */
+        }
+
+          /* Styling for the size options container */
+          .size-option {
+            background-color: #ccc;
+            color: #333;
+            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .size-option:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Style the selected size option */
+        .size-option.selected {
+            background-color: #ccc;
+            color: #ccc;
+        }
+
+        /* Style the "Add to Cart" button */
+        button.add-to-cart {
+            background-color: #657383;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button.add-to-cart:hover {
+            background-color: #98AFC7;
+        }
+        /* Style the "Add to Cart" button */
+        button.add-to-cart {
+            background-color: #657383;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button.add-to-cart:hover {
+            background-color: #98AFC7;
+        }
+
+        /* CSS for color circles */
+        .color-switcher {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .color-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .color-circle.white {
+            background-color: #ccc;
+        }
+
+        .color-circle.black {
+            background-color: #333;
+        }
+
+        /* Highlight the active circle */
+        .color-circle.active {
+            border: 2px solid #333;
+        }
+        /* Style for the contact information and social media links */
+        .contact-social {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            text-align: left; /* Align text to the left */
+            padding-left: 20px; /* Add left padding */
+        }
+
+        .social-links {
+            margin-top: 10px;
+            text-align: left; /* Align links to the left */
+            padding-left: 20px; /* Add left padding */
+        }
+
+        .social-links a {
+            margin: 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .social-links img {
+            width: 30px;
+            height: 30px;
+            transition: opacity 0.3s;
+        }
+
+        /* Add a hover effect for social media logos */
+        .social-links img:hover {
+            opacity: 0.7;
+        }
+        .contact-social {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%; /* Set the width to 100% to span the entire width */
+            height: auto; }/* Chan
+            /* Styles for the menu icon */
+.menu-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1;
+    background-color: transparent; /* Add this line */
+    padding: 10px; /* Add some padding to the icon */
+    border-radius: 50%; /* Make it a circle */
+}
+
+
+.menu-bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Styles for the menu */
+.menu {
+    position: fixed;
+    top: 0;
+    right: -200px; /* Initially hidden */
+    width: 100px;
+    height: 100%;
+    background-color: #333;
+    transition: right 0.4s; /* Animate the right property */
+    z-index: 1;
+}
+
+.menu.active {
+    right: 0; /* Visible */
+}
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.menu ul li {
+    margin: 15px 0;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.menu ul li a:hover {
+    color: #f0f0f0;
+}    
+        
+    </style>
+</head>
+<body>
+    <div class="menu-icon" id="menu-icon">
+        <div class="menu-bar"></div>
+        <div class="menu-bar"></div>
+        <div class="menu-bar"></div>
+    </div>
+    
+    <div class="menu" id="menu">
+        <ul>
+            <li><a id="contact-link" href="./stop.html">Contact</a></li>
+            <li><a id="products-link" href="#products">Products</a></li>
+            <li><a id="offers-link" href="#offers">Offers</a></li>
+        </ul>
+    </div>
+    <div class="product">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <h2>Mahmoud Darweesh T-Shirt</h2>
+        <div class="product-images" id="product2-images">
+            <a href="./darweesh.jpg">
+                <!-- Initially, display two black T-shirt images next to each other -->
+                <img src="./darweesh.jpg" alt="Black T-Shirt 1" style="width: 250px; height: 250px; display: inline-block;" class="product-image black"> </a>
+                <img src="./photo_2023-09-22_22-27-38.jpg" alt="Black T-Shirt 2" style="width: 250px; height: 250px; display: inline-block;" class="product-image black">
+                
+                <!-- Initially, hide two white T-shirt images -->
+                <img src="./darweesh white.jpg" alt="White T-Shirt 1" style="width: 250px; height: 250px; display: none;" class="product-image white">
+                <img src="./white.jpg" alt="White T-Shirt 2" style="width: 250px; height: 250px; margin-right: ; display: none;" class="product-image white">
+            <div class="color-switcher">
+                <!-- Add white and black circles for color switching -->
+                <div class="color-circle white" data-color="white" onclick="changeColor('product2', 'white')"></div>
+                <div class="color-circle black" data-color="black" onclick="changeColor('product2', 'black')"></div>
+            </div>
+            <p>The new Mahmoud Darweesh T-shirt is EPIC. Add it to the cart.</p>
+        </div>
+    </div>
+
+    
+
+    <!-- Modify the "Add to Cart" button to include an ID for easy selection -->
+<!-- ... (your existing HTML code) ... -->
+<div class="product-info">
+    <h2>Mahmoud Darweesh T-Shirt</h2>
+    <p>Price: 10 JD</p>
+    <div class="size-option">
+    <label for="size">Size:</label>
+    <select id="size">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="XXL">XXL</option>
+        <option value="XXXL">XXXL</option>
+
+    </select>
+    <label for="color">Color:</label>
+    <input type="radio" name="color" id="blackColor" value="black" onclick="changeColor('black')">
+    <label for="blackColor">Black</label>
+    <input type="radio" name="color" id="whiteColor" value="white" onclick="changeColor('white')">
+    <label for="whiteColor">White</label>
+    <button onclick="addToCart('Mahmoud Darweesh T-shirt')">Add to Cart</button>
+</div>
+<!-- Contact Information and Social Media Links -->
+<div class="contact-social">
+    <div class="contact-info">
+        <p>Contact Us:</p>
+        <p>Email: stopinamman@gmail.com</p>
+        <p>Phone: +962788645746</p>
+    </div>
+    <div class="social-links">
+        <a href="https://wa.me/+962788645746" target="_blank"> 
+            <img src="./whatsapp.png" alt="WhatsApp">
+        </a>
+        <a href="https://www.facebook.com/yourpage" target="_blank">
+            <img src="./facebook.png" alt="Facebook">
+        </a>
+        <a href="https://instagram.com/stop.joo?igshid=MzRlODBiNWFlZA==" target="_blank">
+            <img src="./instagram.png" alt="Instagram">
+        </a>
+        <a href="https://twitter.com/yourpage" target="_blank">
+            <img src="./twitter.png" alt="Twitter">
+        </a>
+        <a href="https://www.tiktok.com/yourpage" target="_blank">
+            <img src="./tik-tok.png" alt="TikTok">
+        </a>
+    </div>
+</div>
+
+<!-- ... (your existing HTML code) ... -->
+
+    <script>
+        // ...
+    
+        const menuIcon = document.getElementById('menu-icon');
+    const menu = document.getElementById('menu');
+
+    menuIcon.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        
+        // Add an event listener to close the menu when clicking outside of it
+        if (menu.classList.contains('active')) {
+            window.addEventListener('click', closeMenuOnClickOutside);
+        } else {
+            window.removeEventListener('click', closeMenuOnClickOutside);
+        }
+    });
+
+    // Function to close the menu when clicking outside of it
+    function closeMenuOnClickOutside(event) {
+        if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+            menu.classList.remove('active');
+            window.removeEventListener('click', closeMenuOnClickOutside);
+        }
+    }
+        
+        // Function to change the product color
+        function changeColor(productId, color) {
+            const productImages = document.querySelectorAll(`#${productId}-images .product-image`);
+            
+            // Hide all images
+            productImages.forEach(image => {
+                image.style.display = 'none';
+            });
+
+            // Show images of the selected color
+            productImages.forEach(image => {
+                if (image.classList.contains(color)) {
+                    image.style.display = 'inline-block';
+                }
+            });
+        }
+        const cart = [
+    { id: 2, name: "Product 2", price: 15, quantity: 2 },
+    // Add more products as needed
+];
+
+        // JavaScript for add to cart functionality
+        function addToCart(productName) {
+            const size = document.getElementById("size").value;
+            const color = document.querySelector("input[name='color']:checked").value;
+            const price = 10; // Price for Product 1
+            const item = {
+                name: productName,
+                size: size,
+                color: color,
+                price: price,
+            };
+
+            // Retrieve existing cart items from localStorage
+            const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Add the new item to the cart
+            cartItems.push(item);
+
+            // Store the updated cart items back in localStorage
+            localStorage.setItem("cart", JSON.stringify(cartItems));
+
+            // Redirect to the cart page
+            window.location.href = "cart.html";
+        }
+    </script>
+</body>
+</html>
